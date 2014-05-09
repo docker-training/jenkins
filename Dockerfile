@@ -9,6 +9,9 @@ RUN curl -sf -o /opt/jenkins/data/plugins/scm-api.hpi -L http://mirrors.jenkins-
 RUN curl -sf -o /opt/jenkins/data/plugins/git.hpi -L http://mirrors.jenkins-ci.org/plugins/git/latest/git.hpi
 RUN curl -sf -o /opt/jenkins/data/plugins/github-api.hpi -L http://mirrors.jenkins-ci.org/plugins/github-api/latest/github-api.hpi
 RUN curl -sf -o /opt/jenkins/data/plugins/github.hpi -L http://mirrors.jenkins-ci.org/plugins/github/latest/github.hpi
+RUN curl -sf -o /opt/jenkins/data/plugins/docker-build-publish.hpi -L http://mirrors.jenkins-ci.org/plugins/docker-build-publish/latest/docker-build-publish.hpi
+RUN curl -sf -o /opt/jenkins/data/plugins/token-macro.hpi -L http://mirrors.jenkins-ci.org/plugins/token-macro/latest/token-macro.hpi
+
 ENV JENKINS_HOME /opt/jenkins/data
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/opt/jenkins/jenkins.war"]
