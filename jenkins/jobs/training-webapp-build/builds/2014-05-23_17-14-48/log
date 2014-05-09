@@ -1,0 +1,47 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /opt/jenkins/data/jobs/training-webapp-build/workspace
+ > git rev-parse --is-inside-work-tree
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/huslage/webapp.git
+Fetching upstream changes from https://github.com/huslage/webapp.git
+ > git --version
+ > git fetch --tags --progress https://github.com/huslage/webapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse origin/master^{commit}
+Checking out Revision 44d5db927304b09a9967937be88b4ca04a52214f (origin/master)
+ > git config core.sparsecheckout
+ > git checkout -f 44d5db927304b09a9967937be88b4ca04a52214f
+ > git rev-list 44d5db927304b09a9967937be88b4ca04a52214f
+No credentials provided, so not logging in to the registry.
+[workspace] $ docker build -t huslage/webapp-1 .
+Uploading context 89.09 kB
+Uploading context 
+Step 0 : FROM ubuntu:12.04
+ ---> 74fe38d11401
+Step 1 : MAINTAINER Docker Education Team <education@docker.com>
+ ---> Using cache
+ ---> ba88068e5869
+Step 2 : RUN apt-get update
+ ---> Using cache
+ ---> a22908af82c8
+Step 3 : RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q curl python-all python-pip wget
+ ---> Using cache
+ ---> bdec6cbe8424
+Step 4 : ADD ./webapp /opt/webapp/
+ ---> Using cache
+ ---> 0a58cbf7a48e
+Step 5 : WORKDIR /opt/webapp
+ ---> Using cache
+ ---> fb203c4d0583
+Step 6 : RUN pip install -r requirements.txt
+ ---> Using cache
+ ---> d567e85a9218
+Step 7 : EXPOSE 5000
+ ---> Using cache
+ ---> 7a096d30b6d8
+Step 8 : CMD ["python", "app.py"]
+ ---> Using cache
+ ---> c37964b0e486
+Successfully built c37964b0e486
+Warning: you have no plugins providing access control for builds, so falling back to legacy behavior of permitting any downstream builds to be triggered
+Triggering a new build of [8mha:AAAApR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyREgYp/az8JP2SosTMPKB+3fLUpMSCAt2S1OISfQCDkRGlzwAAAA==[0mtraining-webapp-test #2
+Finished: SUCCESS

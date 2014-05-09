@@ -1,0 +1,388 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /opt/jenkins/data/jobs/training-webapp-build/workspace
+ > git rev-parse --is-inside-work-tree
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/huslage/webapp.git
+Fetching upstream changes from https://github.com/huslage/webapp.git
+ > git --version
+ > git fetch --tags --progress https://github.com/huslage/webapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse origin/master^{commit}
+Checking out Revision 44d5db927304b09a9967937be88b4ca04a52214f (origin/master)
+ > git config core.sparsecheckout
+ > git checkout -f 44d5db927304b09a9967937be88b4ca04a52214f
+First time build. Skipping changelog.
+No credentials provided, so not logging in to the registry.
+[workspace] $ docker build -t huslage/webapp-1 .
+Uploading context 89.09 kB
+Uploading context 
+Step 0 : FROM ubuntu:12.04
+Pulling repository ubuntu
+
+
+
+
+
+ ---> 74fe38d11401
+Step 1 : MAINTAINER Docker Education Team <education@docker.com>
+ ---> Running in 86695403cc6b
+ ---> ba88068e5869
+Removing intermediate container 86695403cc6b
+Step 2 : RUN apt-get update
+ ---> Running in 8a2b6c542093
+Hit http://archive.ubuntu.com precise Release.gpg
+Get:1 http://archive.ubuntu.com precise-updates Release.gpg [198 B]
+Get:2 http://archive.ubuntu.com precise-security Release.gpg [198 B]
+Hit http://archive.ubuntu.com precise Release
+Get:3 http://archive.ubuntu.com precise-updates Release [49.6 kB]
+Get:4 http://archive.ubuntu.com precise-security Release [49.6 kB]
+Hit http://archive.ubuntu.com precise/main Sources
+Hit http://archive.ubuntu.com precise/restricted Sources
+Hit http://archive.ubuntu.com precise/universe Sources
+Hit http://archive.ubuntu.com precise/main amd64 Packages
+Hit http://archive.ubuntu.com precise/restricted amd64 Packages
+Hit http://archive.ubuntu.com precise/universe amd64 Packages
+Hit http://archive.ubuntu.com precise/main i386 Packages
+Hit http://archive.ubuntu.com precise/restricted i386 Packages
+Hit http://archive.ubuntu.com precise/universe i386 Packages
+Get:5 http://archive.ubuntu.com precise-updates/main Sources [561 kB]
+Get:6 http://archive.ubuntu.com precise-updates/restricted Sources [8429 B]
+Get:7 http://archive.ubuntu.com precise-updates/universe Sources [132 kB]
+Get:8 http://archive.ubuntu.com precise-updates/main amd64 Packages [1011 kB]
+Get:9 http://archive.ubuntu.com precise-updates/restricted amd64 Packages [16.4 kB]
+Get:10 http://archive.ubuntu.com precise-updates/universe amd64 Packages [310 kB]
+Get:11 http://archive.ubuntu.com precise-updates/main i386 Packages [1043 kB]
+Get:12 http://archive.ubuntu.com precise-updates/restricted i386 Packages [16.3 kB]
+Get:13 http://archive.ubuntu.com precise-updates/universe i386 Packages [317 kB]
+Get:14 http://archive.ubuntu.com precise-security/main Sources [132 kB]
+Get:15 http://archive.ubuntu.com precise-security/restricted Sources [2258 B]
+Get:16 http://archive.ubuntu.com precise-security/universe Sources [35.5 kB]
+Get:17 http://archive.ubuntu.com precise-security/main amd64 Packages [495 kB]
+Get:18 http://archive.ubuntu.com precise-security/restricted amd64 Packages [5282 B]
+Get:19 http://archive.ubuntu.com precise-security/universe amd64 Packages [118 kB]
+Get:20 http://archive.ubuntu.com precise-security/main i386 Packages [526 kB]
+Get:21 http://archive.ubuntu.com precise-security/restricted i386 Packages [5273 B]
+Get:22 http://archive.ubuntu.com precise-security/universe i386 Packages [124 kB]
+Fetched 4960 kB in 1s (2688 kB/s)
+Reading package lists...
+ ---> a22908af82c8
+Removing intermediate container 8a2b6c542093
+Step 3 : RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q curl python-all python-pip wget
+ ---> Running in 761a93d84d4f
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  ca-certificates file krb5-locales libasn1-8-heimdal libcurl3 libexpat1
+  libgcrypt11 libgnutls26 libgpg-error0 libgssapi-krb5-2 libgssapi3-heimdal
+  libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal
+  libhx509-5-heimdal libidn11 libk5crypto3 libkeyutils1 libkrb5-26-heimdal
+  libkrb5-3 libkrb5support0 libldap-2.4-2 libmagic1 libp11-kit0
+  libroken18-heimdal librtmp0 libsasl2-2 libsasl2-modules libsqlite3-0
+  libtasn1-3 libwind0-heimdal mime-support openssl python python-pkg-resources
+  python-setuptools python2.7 python2.7-minimal
+Suggested packages:
+  rng-tools gnutls-bin krb5-doc krb5-user libsasl2-modules-otp
+  libsasl2-modules-ldap libsasl2-modules-sql libsasl2-modules-gssapi-mit
+  libsasl2-modules-gssapi-heimdal python-doc python-tk python-distribute
+  python-distribute-doc python2.7-doc binutils binfmt-support
+The following NEW packages will be installed:
+  ca-certificates curl file krb5-locales libasn1-8-heimdal libcurl3 libexpat1
+  libgcrypt11 libgnutls26 libgpg-error0 libgssapi-krb5-2 libgssapi3-heimdal
+  libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal
+  libhx509-5-heimdal libidn11 libk5crypto3 libkeyutils1 libkrb5-26-heimdal
+  libkrb5-3 libkrb5support0 libldap-2.4-2 libmagic1 libp11-kit0
+  libroken18-heimdal librtmp0 libsasl2-2 libsasl2-modules libsqlite3-0
+  libtasn1-3 libwind0-heimdal mime-support openssl python python-all
+  python-pip python-pkg-resources python-setuptools python2.7 wget
+The following packages will be upgraded:
+  python2.7-minimal
+1 upgraded, 41 newly installed, 0 to remove and 9 not upgraded.
+Need to get 10.2 MB of archives.
+After this operation, 28.0 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsqlite3-0 amd64 3.7.9-2ubuntu1.1 [349 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ precise-updates/main libroken18-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [46.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ precise-updates/main libasn1-8-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [220 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ precise/main libgpg-error0 amd64 1.10-2ubuntu1 [14.5 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgcrypt11 amd64 1.5.0-3ubuntu0.2 [280 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ precise/main libp11-kit0 amd64 0.12-2ubuntu1 [34.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ precise-updates/main libtasn1-3 amd64 2.10-1ubuntu1.1 [43.3 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgnutls26 amd64 2.12.14-5ubuntu3.7 [459 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5support0 amd64 1.10+dfsg~beta1-2ubuntu0.3 [23.8 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ precise-updates/main libk5crypto3 amd64 1.10+dfsg~beta1-2ubuntu0.3 [80.1 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ precise/main libkeyutils1 amd64 1.5.2-2 [7862 B]
+Get:12 http://archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5-3 amd64 1.10+dfsg~beta1-2ubuntu0.3 [355 kB]
+Get:13 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgssapi-krb5-2 amd64 1.10+dfsg~beta1-2ubuntu0.3 [118 kB]
+Get:14 http://archive.ubuntu.com/ubuntu/ precise-updates/main libhcrypto4-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [103 kB]
+Get:15 http://archive.ubuntu.com/ubuntu/ precise-updates/main libheimbase1-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [33.1 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ precise-updates/main libwind0-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [77.8 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ precise-updates/main libhx509-5-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [125 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5-26-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [234 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ precise-updates/main libheimntlm0-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [16.0 kB]
+Get:20 http://archive.ubuntu.com/ubuntu/ precise-updates/main libgssapi3-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [108 kB]
+Get:21 http://archive.ubuntu.com/ubuntu/ precise/main libidn11 amd64 1.23-2 [112 kB]
+Get:22 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsasl2-2 amd64 2.1.25.dfsg1-3ubuntu0.1 [69.1 kB]
+Get:23 http://archive.ubuntu.com/ubuntu/ precise-updates/main libldap-2.4-2 amd64 2.4.28-1.1ubuntu4.4 [185 kB]
+Get:24 http://archive.ubuntu.com/ubuntu/ precise/main librtmp0 amd64 2.4~20110711.gitc28f1bab-1 [57.1 kB]
+Get:25 http://archive.ubuntu.com/ubuntu/ precise-updates/main openssl amd64 1.0.1-4ubuntu5.13 [524 kB]
+Get:26 http://archive.ubuntu.com/ubuntu/ precise-updates/main ca-certificates all 20130906ubuntu0.12.04.1 [192 kB]
+Get:27 http://archive.ubuntu.com/ubuntu/ precise-updates/main libcurl3 amd64 7.22.0-3ubuntu4.8 [237 kB]
+Get:28 http://archive.ubuntu.com/ubuntu/ precise-updates/main libexpat1 amd64 2.0.1-7.2ubuntu1.1 [131 kB]
+Get:29 http://archive.ubuntu.com/ubuntu/ precise-updates/main python2.7-minimal amd64 2.7.3-0ubuntu3.5 [1743 kB]
+Get:30 http://archive.ubuntu.com/ubuntu/ precise-updates/main libmagic1 amd64 5.09-2ubuntu0.3 [217 kB]
+Get:31 http://archive.ubuntu.com/ubuntu/ precise-updates/main file amd64 5.09-2ubuntu0.3 [19.7 kB]
+Get:32 http://archive.ubuntu.com/ubuntu/ precise/main mime-support all 3.51-1ubuntu1 [30.7 kB]
+Get:33 http://archive.ubuntu.com/ubuntu/ precise-updates/main python2.7 amd64 2.7.3-0ubuntu3.5 [2675 kB]
+Get:34 http://archive.ubuntu.com/ubuntu/ precise-updates/main python amd64 2.7.3-0ubuntu2.2 [168 kB]
+Get:35 http://archive.ubuntu.com/ubuntu/ precise-updates/main krb5-locales all 1.10+dfsg~beta1-2ubuntu0.3 [9204 B]
+Get:36 http://archive.ubuntu.com/ubuntu/ precise-updates/main libsasl2-modules amd64 2.1.25.dfsg1-3ubuntu0.1 [63.2 kB]
+Get:37 http://archive.ubuntu.com/ubuntu/ precise/main wget amd64 1.13.4-2ubuntu1 [277 kB]
+Get:38 http://archive.ubuntu.com/ubuntu/ precise-updates/main curl amd64 7.22.0-3ubuntu4.8 [138 kB]
+Get:39 http://archive.ubuntu.com/ubuntu/ precise-updates/main python-all amd64 2.7.3-0ubuntu2.2 [912 B]
+Get:40 http://archive.ubuntu.com/ubuntu/ precise/main python-pkg-resources all 0.6.24-1ubuntu1 [63.1 kB]
+Get:41 http://archive.ubuntu.com/ubuntu/ precise/main python-setuptools all 0.6.24-1ubuntu1 [441 kB]
+Get:42 http://archive.ubuntu.com/ubuntu/ precise/universe python-pip all 1.0-1build1 [95.1 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 10.2 MB in 2min 15s (75.3 kB/s)
+Selecting previously unselected package libsqlite3-0.
+(Reading database ... 7569 files and directories currently installed.)
+Unpacking libsqlite3-0 (from .../libsqlite3-0_3.7.9-2ubuntu1.1_amd64.deb) ...
+Selecting previously unselected package libroken18-heimdal.
+Unpacking libroken18-heimdal (from .../libroken18-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libasn1-8-heimdal.
+Unpacking libasn1-8-heimdal (from .../libasn1-8-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libgpg-error0.
+Unpacking libgpg-error0 (from .../libgpg-error0_1.10-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libgcrypt11.
+Unpacking libgcrypt11 (from .../libgcrypt11_1.5.0-3ubuntu0.2_amd64.deb) ...
+Selecting previously unselected package libp11-kit0.
+Unpacking libp11-kit0 (from .../libp11-kit0_0.12-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libtasn1-3.
+Unpacking libtasn1-3 (from .../libtasn1-3_2.10-1ubuntu1.1_amd64.deb) ...
+Selecting previously unselected package libgnutls26.
+Unpacking libgnutls26 (from .../libgnutls26_2.12.14-5ubuntu3.7_amd64.deb) ...
+Selecting previously unselected package libkrb5support0.
+Unpacking libkrb5support0 (from .../libkrb5support0_1.10+dfsg~beta1-2ubuntu0.3_amd64.deb) ...
+Selecting previously unselected package libk5crypto3.
+Unpacking libk5crypto3 (from .../libk5crypto3_1.10+dfsg~beta1-2ubuntu0.3_amd64.deb) ...
+Selecting previously unselected package libkeyutils1.
+Unpacking libkeyutils1 (from .../libkeyutils1_1.5.2-2_amd64.deb) ...
+Selecting previously unselected package libkrb5-3.
+Unpacking libkrb5-3 (from .../libkrb5-3_1.10+dfsg~beta1-2ubuntu0.3_amd64.deb) ...
+Selecting previously unselected package libgssapi-krb5-2.
+Unpacking libgssapi-krb5-2 (from .../libgssapi-krb5-2_1.10+dfsg~beta1-2ubuntu0.3_amd64.deb) ...
+Selecting previously unselected package libhcrypto4-heimdal.
+Unpacking libhcrypto4-heimdal (from .../libhcrypto4-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libheimbase1-heimdal.
+Unpacking libheimbase1-heimdal (from .../libheimbase1-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libwind0-heimdal.
+Unpacking libwind0-heimdal (from .../libwind0-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libhx509-5-heimdal.
+Unpacking libhx509-5-heimdal (from .../libhx509-5-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libkrb5-26-heimdal.
+Unpacking libkrb5-26-heimdal (from .../libkrb5-26-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libheimntlm0-heimdal.
+Unpacking libheimntlm0-heimdal (from .../libheimntlm0-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libgssapi3-heimdal.
+Unpacking libgssapi3-heimdal (from .../libgssapi3-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libidn11.
+Unpacking libidn11 (from .../libidn11_1.23-2_amd64.deb) ...
+Selecting previously unselected package libsasl2-2.
+Unpacking libsasl2-2 (from .../libsasl2-2_2.1.25.dfsg1-3ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package libldap-2.4-2.
+Unpacking libldap-2.4-2 (from .../libldap-2.4-2_2.4.28-1.1ubuntu4.4_amd64.deb) ...
+Selecting previously unselected package librtmp0.
+Unpacking librtmp0 (from .../librtmp0_2.4~20110711.gitc28f1bab-1_amd64.deb) ...
+Selecting previously unselected package openssl.
+Unpacking openssl (from .../openssl_1.0.1-4ubuntu5.13_amd64.deb) ...
+Selecting previously unselected package ca-certificates.
+Unpacking ca-certificates (from .../ca-certificates_20130906ubuntu0.12.04.1_all.deb) ...
+Selecting previously unselected package libcurl3.
+Unpacking libcurl3 (from .../libcurl3_7.22.0-3ubuntu4.8_amd64.deb) ...
+Selecting previously unselected package libexpat1.
+Unpacking libexpat1 (from .../libexpat1_2.0.1-7.2ubuntu1.1_amd64.deb) ...
+Preparing to replace python2.7-minimal 2.7.3-0ubuntu3.4 (using .../python2.7-minimal_2.7.3-0ubuntu3.5_amd64.deb) ...
+Unpacking replacement python2.7-minimal ...
+Setting up python2.7-minimal (2.7.3-0ubuntu3.5) ...
+Selecting previously unselected package libmagic1.
+(Reading database ... 8040 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_5.09-2ubuntu0.3_amd64.deb) ...
+Selecting previously unselected package file.
+Unpacking file (from .../file_5.09-2ubuntu0.3_amd64.deb) ...
+Selecting previously unselected package mime-support.
+Unpacking mime-support (from .../mime-support_3.51-1ubuntu1_all.deb) ...
+Selecting previously unselected package python2.7.
+Unpacking python2.7 (from .../python2.7_2.7.3-0ubuntu3.5_amd64.deb) ...
+Selecting previously unselected package python.
+Unpacking python (from .../python_2.7.3-0ubuntu2.2_amd64.deb) ...
+Selecting previously unselected package krb5-locales.
+Unpacking krb5-locales (from .../krb5-locales_1.10+dfsg~beta1-2ubuntu0.3_all.deb) ...
+Selecting previously unselected package libsasl2-modules.
+Unpacking libsasl2-modules (from .../libsasl2-modules_2.1.25.dfsg1-3ubuntu0.1_amd64.deb) ...
+Selecting previously unselected package wget.
+Unpacking wget (from .../wget_1.13.4-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package curl.
+Unpacking curl (from .../curl_7.22.0-3ubuntu4.8_amd64.deb) ...
+Selecting previously unselected package python-all.
+Unpacking python-all (from .../python-all_2.7.3-0ubuntu2.2_amd64.deb) ...
+Selecting previously unselected package python-pkg-resources.
+Unpacking python-pkg-resources (from .../python-pkg-resources_0.6.24-1ubuntu1_all.deb) ...
+Selecting previously unselected package python-setuptools.
+Unpacking python-setuptools (from .../python-setuptools_0.6.24-1ubuntu1_all.deb) ...
+Selecting previously unselected package python-pip.
+Unpacking python-pip (from .../python-pip_1.0-1build1_all.deb) ...
+Setting up libsqlite3-0 (3.7.9-2ubuntu1.1) ...
+Setting up libroken18-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libasn1-8-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libgpg-error0 (1.10-2ubuntu1) ...
+Setting up libgcrypt11 (1.5.0-3ubuntu0.2) ...
+Setting up libp11-kit0 (0.12-2ubuntu1) ...
+Setting up libtasn1-3 (2.10-1ubuntu1.1) ...
+Setting up libgnutls26 (2.12.14-5ubuntu3.7) ...
+Setting up libkrb5support0 (1.10+dfsg~beta1-2ubuntu0.3) ...
+Setting up libk5crypto3 (1.10+dfsg~beta1-2ubuntu0.3) ...
+Setting up libkeyutils1 (1.5.2-2) ...
+Setting up libkrb5-3 (1.10+dfsg~beta1-2ubuntu0.3) ...
+Setting up libgssapi-krb5-2 (1.10+dfsg~beta1-2ubuntu0.3) ...
+Setting up libhcrypto4-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libheimbase1-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libwind0-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libhx509-5-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libkrb5-26-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libheimntlm0-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libgssapi3-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+Setting up libidn11 (1.23-2) ...
+Setting up libsasl2-2 (2.1.25.dfsg1-3ubuntu0.1) ...
+Setting up libldap-2.4-2 (2.4.28-1.1ubuntu4.4) ...
+Setting up librtmp0 (2.4~20110711.gitc28f1bab-1) ...
+Setting up openssl (1.0.1-4ubuntu5.13) ...
+Setting up ca-certificates (20130906ubuntu0.12.04.1) ...
+[91mUpdating certificates in /etc/ssl/certs... [0m[91m164 added, 0 removed; done.
+[0m[91mRunning hooks in /etc/ca-certificates/update.d....[0m[91mdone.
+[0mSetting up libcurl3 (7.22.0-3ubuntu4.8) ...
+Setting up libexpat1 (2.0.1-7.2ubuntu1.1) ...
+Setting up libmagic1 (5.09-2ubuntu0.3) ...
+Setting up file (5.09-2ubuntu0.3) ...
+Setting up mime-support (3.51-1ubuntu1) ...
+update-alternatives: using /usr/bin/see to provide /usr/bin/view (view) in auto mode.
+Setting up python2.7 (2.7.3-0ubuntu3.5) ...
+Setting up python (2.7.3-0ubuntu2.2) ...
+Setting up krb5-locales (1.10+dfsg~beta1-2ubuntu0.3) ...
+Setting up libsasl2-modules (2.1.25.dfsg1-3ubuntu0.1) ...
+Setting up wget (1.13.4-2ubuntu1) ...
+Setting up curl (7.22.0-3ubuntu4.8) ...
+Setting up python-all (2.7.3-0ubuntu2.2) ...
+Setting up python-pkg-resources (0.6.24-1ubuntu1) ...
+Setting up python-setuptools (0.6.24-1ubuntu1) ...
+Setting up python-pip (1.0-1build1) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+ ---> bdec6cbe8424
+Removing intermediate container 761a93d84d4f
+Step 4 : ADD ./webapp /opt/webapp/
+ ---> 0a58cbf7a48e
+Removing intermediate container 0f3b5c7781d3
+Step 5 : WORKDIR /opt/webapp
+ ---> Running in ffc249029fc2
+ ---> fb203c4d0583
+Removing intermediate container ffc249029fc2
+Step 6 : RUN pip install -r requirements.txt
+ ---> Running in cce5571966d8
+Downloading/unpacking Flask==0.8 (from -r requirements.txt (line 1))
+  Running setup.py egg_info for package Flask
+    
+    warning: no files found matching '*' under directory 'tests'
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+    warning: no previously-included files matching '*.pyc' found under directory 'tests'
+    warning: no previously-included files matching '*.pyo' found under directory 'tests'
+    warning: no previously-included files matching '*.pyc' found under directory 'examples'
+    warning: no previously-included files matching '*.pyo' found under directory 'examples'
+    no previously-included directories found matching 'docs/_build'
+    no previously-included directories found matching 'docs/_themes/.git'
+Downloading/unpacking Jinja2==2.6 (from -r requirements.txt (line 2))
+  Running setup.py egg_info for package Jinja2
+    
+    warning: no previously-included files matching '*' found under directory 'docs/_build'
+    warning: no previously-included files matching '*.pyc' found under directory 'jinja2'
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'jinja2'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+Downloading/unpacking Werkzeug==0.8.3 (from -r requirements.txt (line 3))
+  Running setup.py egg_info for package Werkzeug
+    
+    warning: no files found matching '*' under directory 'werkzeug/debug/templates'
+    warning: no files found matching '*' under directory 'tests'
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+    warning: no previously-included files matching '*.pyc' found under directory 'tests'
+    warning: no previously-included files matching '*.pyo' found under directory 'tests'
+    warning: no previously-included files matching '*.pyc' found under directory 'examples'
+    warning: no previously-included files matching '*.pyo' found under directory 'examples'
+    no previously-included directories found matching 'docs/_build'
+Downloading/unpacking distribute==0.6.14 (from -r requirements.txt (line 4))
+  Running setup.py egg_info for package distribute
+    
+Requirement already satisfied (use --upgrade to upgrade): wsgiref==0.1.2 in /usr/lib/python2.7 (from -r requirements.txt (line 5))
+Installing collected packages: Flask, Jinja2, Werkzeug, distribute
+  Running setup.py install for Flask
+    
+    warning: no files found matching '*' under directory 'tests'
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+    warning: no previously-included files matching '*.pyc' found under directory 'tests'
+    warning: no previously-included files matching '*.pyo' found under directory 'tests'
+    warning: no previously-included files matching '*.pyc' found under directory 'examples'
+    warning: no previously-included files matching '*.pyo' found under directory 'examples'
+    no previously-included directories found matching 'docs/_build'
+    no previously-included directories found matching 'docs/_themes/.git'
+  Running setup.py install for Jinja2
+    
+    warning: no previously-included files matching '*' found under directory 'docs/_build'
+    warning: no previously-included files matching '*.pyc' found under directory 'jinja2'
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'jinja2'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+  Running setup.py install for Werkzeug
+    
+    warning: no files found matching '*' under directory 'werkzeug/debug/templates'
+    warning: no files found matching '*' under directory 'tests'
+    warning: no previously-included files matching '*.pyc' found under directory 'docs'
+    warning: no previously-included files matching '*.pyo' found under directory 'docs'
+    warning: no previously-included files matching '*.pyc' found under directory 'tests'
+    warning: no previously-included files matching '*.pyo' found under directory 'tests'
+    warning: no previously-included files matching '*.pyc' found under directory 'examples'
+    warning: no previously-included files matching '*.pyo' found under directory 'examples'
+    no previously-included directories found matching 'docs/_build'
+  Found existing installation: distribute 0.6.24dev-r0
+    Uninstalling distribute:
+      Successfully uninstalled distribute
+  Running setup.py install for distribute
+    Before install bootstrap.
+    Scanning installed packages
+    Setuptools installation detected at /usr/lib/python2.7/dist-packages
+    Non-egg installation
+    Removing elements out of the way...
+    Already patched.
+    /usr/lib/python2.7/dist-packages/setuptools.egg-info already patched.
+    
+    Installing easy_install script to /usr/local/bin
+    Installing easy_install-2.7 script to /usr/local/bin
+    After install bootstrap.
+    Creating /usr/local/lib/python2.7/dist-packages/setuptools-0.6c11-py2.7.egg-info
+    Creating /usr/local/lib/python2.7/dist-packages/setuptools.pth
+Successfully installed Flask Jinja2 Werkzeug distribute
+Cleaning up...
+ ---> d567e85a9218
+Removing intermediate container cce5571966d8
+Step 7 : EXPOSE 5000
+ ---> Running in ca23817066f8
+ ---> 7a096d30b6d8
+Removing intermediate container ca23817066f8
+Step 8 : CMD ["python", "app.py"]
+ ---> Running in 5fb9d6eaeaf7
+ ---> c37964b0e486
+Removing intermediate container 5fb9d6eaeaf7
+Successfully built c37964b0e486
+Warning: you have no plugins providing access control for builds, so falling back to legacy behavior of permitting any downstream builds to be triggered
+Triggering a new build of [8mha:AAAApR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyREgYp/az8JP2SosTMPKB+3fLUpMSCAt2S1OISfQCDkRGlzwAAAA==[0mtraining-webapp-test #1
+Finished: SUCCESS

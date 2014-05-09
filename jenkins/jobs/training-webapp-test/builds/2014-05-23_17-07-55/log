@@ -1,0 +1,7 @@
+Started by upstream project "[8mha:AAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzREgZp/az8JP2SosTMPKB+3fLUpMSCAt2k0sycFH0A6qHmidAAAAA=[0mtraining-webapp-build" build number [8mha:AAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhn9rPwk/ZKixMw8oH7d8tSkxIIC3aTSzJwUfUMADn8/XdEAAAA=[0m1
+originally caused by:
+ Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /opt/jenkins/data/jobs/training-webapp-test/workspace
+[workspace] $ /bin/sh -xe /tmp/hudson3122061799324723182.sh
++ docker run --rm -it huslage/webapp-1 /usr/bin/python /opt/webapp/tests.py
+Finished: SUCCESS
