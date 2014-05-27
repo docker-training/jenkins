@@ -26,7 +26,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>docker run --rm -it @@DHUSER@@/webapp-1 /usr/bin/python /opt/webapp/tests.py
+      <command>docker run --rm -it @@DHUSER@@/webapp /usr/bin/python /opt/webapp/tests.py
 </command>
     </hudson.tasks.Shell>
   </builders>

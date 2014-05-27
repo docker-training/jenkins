@@ -36,7 +36,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <com.cloudbees.dockerpublish.DockerBuilder plugin="docker-build-publish@0.4">
-      <repoName>@@DHUSER@@/webapp-1</repoName>
+      <repoName>@@DHUSER@@/webapp</repoName>
       <noCache>false</noCache>
       <repoTag></repoTag>
       <skipPush>true</skipPush>
