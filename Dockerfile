@@ -1,7 +1,7 @@
-FROM ubuntu:12.04
+FROM debian:jessie
 MAINTAINER Education Team education@docker.com
 RUN apt-get update -qq
-RUN apt-get install -qqy ca-certificates openjdk-6-jdk curl git-core supervisor iptables 
+RUN apt-get install -qqy ca-certificates openjdk-7-jdk curl git-core 
 
 RUN mkdir -p /opt/jenkins/data/plugins
 RUN curl -sf -o /opt/jenkins/jenkins.war -L http://mirrors.jenkins-ci.org/war/latest/jenkins.war
@@ -20,15 +20,10 @@ ADD jenkins/com.cloudbees.jenkins.GitHubPushTrigger.xml /opt/jenkins/data/com.cl
 ADD jenkins/jobs/ /opt/jenkins/data/jobs/
 
 RUN curl -sf -o /usr/local/bin/docker -L https://get.docker.io/builds/Linux/x86_64/docker-latest
-ADD wrapdocker /usr/local/bin/wrapdocker
-ADD jenkins.conf /etc/supervisor/conf.d/
-ADD supervisor.conf /etc/supervisor.conf
-ADD dind.conf /etc/supervisor/conf.d/
 ADD runjenkins.sh /usr/local/bin/runjenkins
 
-RUN chmod 0755 /usr/local/bin/docker /usr/local/bin/wrapdocker /usr/local/bin/runjenkins
+RUN chmod 0755 /usr/local/bin/docker /usr/local/bin/runjenkins
 
-ENV DOCKER_HOST tcp://localhost:4444
 ENV JENKINS_HOME /opt/jenkins/data
 EXPOSE 8080
-CMD ["supervisord","-c","/etc/supervisor.conf"]
+CMD ["/usr/local/bin/runjenkins"]
