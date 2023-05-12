@@ -1,4 +1,4 @@
-# Docker Jenkins image
+# Docker Jenkins file
 
 This is the Docker Jenkins image for the Docker Fundamentals capstone
 exercise.
